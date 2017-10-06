@@ -56,6 +56,10 @@ class GameScene: SKScene {
         net.zPosition = 1
         net.setScale(0.7)
         net.position = CGPoint(x: bounds.width - net.size.width / 2 - 30, y: player.position.y - player.size.height / 2 + net.size.height / 2)
+        let texturedNet = SKTexture(imageNamed: "Net")
+        net.physicsBody = SKPhysicsBody(texture: texturedNet, size: net.size)
+        net.physicsBody?.categoryBitMask = ColliderType.floor.rawValue
+        net.physicsBody?.isDynamic = false
 
         // add nodes
         addChild(background)
@@ -76,7 +80,7 @@ extension GameScene {
         // Retrieve location of touch
         if let touch = touches.first {
             let touchPosition = touch.location(in: view)
-            basketball.physicsBody?.applyForce(CGVector(dx: 10, dy: 10))
+            basketball.physicsBody?.applyForce(CGVector(dx: 10, dy: 50))
         }
     }
     
@@ -90,7 +94,7 @@ extension GameScene {
         
     }
 
-    private func changeTrajectory(){
+    @objc private func changeTrajectory(){
         
         
     }
