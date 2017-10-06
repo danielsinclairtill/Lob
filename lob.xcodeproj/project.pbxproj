@@ -11,10 +11,10 @@
 		8B1C5D9D1F747C99000F9C53 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1C5D9C1F747C99000F9C53 /* GameScene.swift */; };
 		8B1C5D9F1F747C99000F9C53 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1C5D9E1F747C99000F9C53 /* GameViewController.swift */; };
 		8B1C5DA21F747C99000F9C53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B1C5DA01F747C99000F9C53 /* Main.storyboard */; };
-		8B1C5DA41F747C99000F9C53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B1C5DA31F747C99000F9C53 /* Assets.xcassets */; };
 		8B1C5DA71F747C99000F9C53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B1C5DA51F747C99000F9C53 /* LaunchScreen.storyboard */; };
 		8B1C5DB21F747C99000F9C53 /* lobTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1C5DB11F747C99000F9C53 /* lobTests.swift */; };
 		8B1C5DBD1F747C99000F9C53 /* lobUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1C5DBC1F747C99000F9C53 /* lobUITests.swift */; };
+		8B5B8BA81F8704720024C518 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B5B8BA71F8704720024C518 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +40,6 @@
 		8B1C5D9C1F747C99000F9C53 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		8B1C5D9E1F747C99000F9C53 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		8B1C5DA11F747C99000F9C53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8B1C5DA31F747C99000F9C53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B1C5DA61F747C99000F9C53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B1C5DA81F747C99000F9C53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B1C5DAD1F747C99000F9C53 /* lobTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lobTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +48,7 @@
 		8B1C5DB81F747C99000F9C53 /* lobUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lobUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B1C5DBC1F747C99000F9C53 /* lobUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lobUITests.swift; sourceTree = "<group>"; };
 		8B1C5DBE1F747C99000F9C53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B5B8BA71F8704720024C518 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,8 +102,8 @@
 				8B1C5D961F747C99000F9C53 /* AppDelegate.swift */,
 				8B1C5D9C1F747C99000F9C53 /* GameScene.swift */,
 				8B1C5D9E1F747C99000F9C53 /* GameViewController.swift */,
+				8B5B8BA71F8704720024C518 /* Assets.xcassets */,
 				8B1C5DA01F747C99000F9C53 /* Main.storyboard */,
-				8B1C5DA31F747C99000F9C53 /* Assets.xcassets */,
 				8B1C5DA51F747C99000F9C53 /* LaunchScreen.storyboard */,
 				8B1C5DA81F747C99000F9C53 /* Info.plist */,
 			);
@@ -236,7 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B1C5DA21F747C99000F9C53 /* Main.storyboard in Resources */,
-				8B1C5DA41F747C99000F9C53 /* Assets.xcassets in Resources */,
+				8B5B8BA81F8704720024C518 /* Assets.xcassets in Resources */,
 				8B1C5DA71F747C99000F9C53 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +423,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.perfectfifth.lob;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -435,6 +436,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.perfectfifth.lob;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -10,15 +10,37 @@ import SpriteKit
 
 class GameScene: SKScene {
     
-    // 1
-    let player = SKSpriteNode(imageNamed: "player")
+    // initialization
+    let background = SKSpriteNode(imageNamed: "Background")
+    let player = SKSpriteNode(imageNamed: "PlayerStand")
+    let basketball = SKSpriteNode(imageNamed: "Ball")
+    let net = SKSpriteNode(imageNamed: "Net")
     
     override func didMove(to view: SKView) {
-        // 2
+
+        // background setup
+        let bounds:CGSize = frame.size
         backgroundColor = SKColor.white
-        // 3
-        player.position = CGPoint(x: size.width * 0.1, y: size.height * 0.5)
-        // 4
+        background.zPosition = -10.0
+        background.scale(to: frame.size)
+        background.position = CGPoint(x: bounds.width / 2 , y: bounds.height / 2)
+        
+        // player setup
+        player.position = CGPoint(x: player.size.width / 2 + 30, y: 160)
+        
+        // basketball setup
+        basketball.zPosition = 1
+        basketball.position = CGPoint(x: player.size.width / 2 + 36, y: 158)
+        
+        // net setup
+        net.zPosition = 1
+        net.setScale(0.7)
+        net.position = CGPoint(x: bounds.width - net.size.width / 2 - 30, y: player.position.y - player.size.height / 2 + net.size.height / 2)
+
+        // add nodes
+        addChild(background)
         addChild(player)
+        addChild(basketball)
+        addChild(net)
     }
 }
