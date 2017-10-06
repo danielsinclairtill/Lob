@@ -15,6 +15,7 @@
 		8B1C5DB21F747C99000F9C53 /* lobTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1C5DB11F747C99000F9C53 /* lobTests.swift */; };
 		8B1C5DBD1F747C99000F9C53 /* lobUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1C5DBC1F747C99000F9C53 /* lobUITests.swift */; };
 		8B5B8BA81F8704720024C518 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B5B8BA71F8704720024C518 /* Assets.xcassets */; };
+		8BB300441F8812700085E37A /* TrajectoryPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB300431F8812700085E37A /* TrajectoryPath.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		8B1C5DBC1F747C99000F9C53 /* lobUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lobUITests.swift; sourceTree = "<group>"; };
 		8B1C5DBE1F747C99000F9C53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B5B8BA71F8704720024C518 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8BB300431F8812700085E37A /* TrajectoryPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrajectoryPath.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				8B1C5D961F747C99000F9C53 /* AppDelegate.swift */,
 				8B1C5D9C1F747C99000F9C53 /* GameScene.swift */,
+				8BB300431F8812700085E37A /* TrajectoryPath.swift */,
 				8B1C5D9E1F747C99000F9C53 /* GameViewController.swift */,
 				8B5B8BA71F8704720024C518 /* Assets.xcassets */,
 				8B1C5DA01F747C99000F9C53 /* Main.storyboard */,
@@ -265,6 +268,7 @@
 				8B1C5D9D1F747C99000F9C53 /* GameScene.swift in Sources */,
 				8B1C5D9F1F747C99000F9C53 /* GameViewController.swift in Sources */,
 				8B1C5D971F747C99000F9C53 /* AppDelegate.swift in Sources */,
+				8BB300441F8812700085E37A /* TrajectoryPath.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
