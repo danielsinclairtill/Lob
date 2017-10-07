@@ -51,6 +51,7 @@ class GameScene: SKScene {
         basketball.physicsBody = SKPhysicsBody(circleOfRadius: basketball.size.height / 2)
         basketball.physicsBody?.collisionBitMask = ColliderType.floor.rawValue
         basketball.physicsBody?.affectedByGravity = true
+        basketball.physicsBody?.mass = 0.005
         
         // net setup
         net.zPosition = 1
@@ -80,7 +81,14 @@ extension GameScene {
         // Retrieve location of touch
         if let touch = touches.first {
             let touchPosition = touch.location(in: view)
-            basketball.physicsBody?.applyForce(CGVector(dx: 10, dy: 50))
+            let trajectoryPath = TrajectoryPathLoader(startPosition: basketball.position, startVelocity: CGVector(dx: 40, dy: 40))
+            let computedPath = trajectoryPath.getTrajectoryPath()
+            basketball.physicsBody?.applyForce(CGVector(dx: 40, dy: 40))
+            
+            for dot in computedPath {
+                addChild(dot)
+            }
+            
         }
     }
     
