@@ -24,6 +24,10 @@ class GameScene: SKScene {
     let player = SKSpriteNode(imageNamed: "PlayerStand")
     let basketball = SKSpriteNode(imageNamed: "Ball")
     let net = SKSpriteNode(imageNamed: "Net")
+
+    var trajectoryTimer: Timer?
+    var trajectoryPath: [SKShapeNode] = []
+    var shootVector: CGVector = CGVector(dx: 5, dy: 0)
     
     override func didMove(to view: SKView) {
 
@@ -51,7 +55,7 @@ class GameScene: SKScene {
         basketball.physicsBody = SKPhysicsBody(circleOfRadius: basketball.size.height / 2)
         basketball.physicsBody?.collisionBitMask = ColliderType.floor.rawValue
         basketball.physicsBody?.affectedByGravity = true
-        basketball.physicsBody?.mass = 0.005
+        //basketball.physicsBody?.mass = 0.01
         
         // net setup
         net.zPosition = 1
@@ -80,30 +84,38 @@ extension GameScene {
         /* Called when a touch begins */
         // Retrieve location of touch
         if let touch = touches.first {
+            basketball.position = CGPoint(x: player.size.width / 2 + 36, y: 158)
             let touchPosition = touch.location(in: view)
-            let trajectoryPath = TrajectoryPathLoader(startPosition: basketball.position, startVelocity: CGVector(dx: 40, dy: 40))
-            let computedPath = trajectoryPath.getTrajectoryPath()
-            basketball.physicsBody?.applyForce(CGVector(dx: 40, dy: 40))
-            
-            for dot in computedPath {
-                addChild(dot)
-            }
-            
+            prepareShoot()
         }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         /* Called when a touch ends */
+        trajectoryTimer?.invalidate()
+        basketball.physicsBody?.applyImpulse(shootVector)
     }
 
-    private func applyFriction() {
-        let trajectoryTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(changeTrajectory), userInfo: nil, repeats: true)
-        
+    private func prepareShoot() {
+        trajectoryTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(changeTrajectory), userInfo: nil, repeats: true)
     }
 
     @objc private func changeTrajectory(){
         
+        // remove current trajectory
+        for dot in trajectoryPath {
+            dot.removeFromParent()
+        }
+        trajectoryPath = []
         
+        // update to new trajectory
+        shootVector.dy += 1
+        let trajectoryPathLoader = TrajectoryPathLoader(startPosition: basketball.position, startVelocity: CGVector(dx: shootVector.dx, dy: shootVector.dy))
+        trajectoryPath = trajectoryPathLoader.getTrajectoryPath()
+        
+        for dot in trajectoryPath {
+            addChild(dot)
+        }
     }
 }
